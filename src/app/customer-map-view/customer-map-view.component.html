@@ -1,0 +1,13 @@
+<div class="row "style="margin-top: 15px; background:transparent;" >
+    <div class="col-md-2 card" style="background:transparent; width: 10rem;margin-top:10px;margin-right: 10px;" *ngIf="mapData">
+      <h3>{{mapData.name}}</h3>
+        <img src="https://www.hit4hit.org/img/login/user-icon-6.png" class="card-img-top" alt="image">
+        <h6>{{mapData.key}}</h6>
+        <button class="btn btn-danger" (click)="deleteCustomer(mapData)" routerLink="/customerView/cartView">Delete</button>
+    </div>
+    <div class="col-md-9">
+        <div #map style="width:100%;height:400px"></div>
+    </div>
+</div> 
+
+<h3 *ngIf="!mapData"> map data doesn't found(please select some map data)</h3>

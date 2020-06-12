@@ -1,0 +1,12 @@
+a.red{
+    color:red;
+}
+.list-group-item-light{
+  background:transparent;
+}
+.list-group:hover{
+  box-shadow: 0px 0px 5px 2px;
+}
+.list-group-item-light:hover{
+  box-shadow: 0px 0px 5px 2px;
+}

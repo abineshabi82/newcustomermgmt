@@ -1,0 +1,21 @@
+
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Desiger</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers|paginate:{itemsPerPage:6,currentPage:pq}">
+            <th scope="row">{{customer.id}}</th>
+            <td>{{customer.name}}</td>
+            <td>{{customer.key}}</td>
+            <td><img src="https://www.hit4hit.org/img/login/user-icon-6.png" style="width: 10%;" class="card-img-top" alt="image"></td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pq=$event"></pagination-controls>
+      

@@ -1,0 +1,38 @@
+<br/>
+<table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">Ordered Items</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders|paginate:{itemsPerPage:6,currentPage:pq}" (click)="changeOrder(order)">
+        <th scope="row">{{order.orderId}}</th>
+        <td>{{order.orderItem}}</td>
+        <td>{{order.cusId}}</td>
+        <td>{{order.quantity}}</td>
+        <td>{{order.price}}</td>
+        <td>{{order.quantity*order.price}}</td>
+        <td ><a routerLink="/customerInfo/customerOrderView" (click)="doDelete(order)"><h4>x</h4></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+  <div class="col-md-11" style="text-align:right"><h4>Total price</h4></div><div class="col-md-1"><h5>{{getSum()}}</h5></div>
+  </div><br/>
+  <pagination-controls (pageChange)="pq=$event"></pagination-controls>
+  <br/>
+  <input [(ngModel)]="or.orderItem" placeholder="enter Item name"/>
+  <input [value]="mapData.id" type="hidden"/>
+  <input [(ngModel)]="or.quantity" placeholder="enter quantity"/>
+  <input [(ngModel)]="or.price" placeholder="enter price"/>
+  <button type="submit" (click)="doPost()">post or update</button>
+  <button (click)="reset()">reset</button>
+      <br/>
+  

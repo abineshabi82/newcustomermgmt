@@ -1,0 +1,156 @@
+<div class="card">
+
+    <div class="card-header">
+  
+      Sign Up!
+  
+    </div>
+  
+  
+  
+    <div class="card-body">
+  
+      <form novalidate
+  
+          
+  
+            #signupForm="ngForm">
+  
+  
+        <div class="form-group row mb-2">
+  
+          <label class="col-md-2 col-form-label"
+  
+                 for="emailId">Email</label>
+  
+          <div class="col-md-8">
+  
+            <input class="form-control"
+  
+                   id="emailId"
+  
+                   type="email"
+  
+                   placeholder="Email (required example@virtusa.com)"
+  
+                   required
+  
+                   email
+  
+                   [(ngModel)]="customer.email"
+  
+                   name="email"
+  
+                   #emailVar="ngModel"
+                   pattern="^[\w]+\@virtusa\.com$"
+  
+                   [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid }" />
+  
+            <span class="invalid-feedback">
+  
+              <span *ngIf="emailVar.errors?.required">
+  
+                Please enter your email address.
+  
+              </span>
+  
+              <span *ngIf="emailVar.valid==false">
+  
+                Please enter a valid email address(example@virtusa.com).
+  
+              </span>
+  
+            </span>
+  
+          </div>
+  
+        </div>
+  
+
+        <div class="form-group row mb-2">
+  
+          <label class="col-md-2 col-form-label"
+  
+                 for="Password">Password</label>
+  
+          <div class="col-md-8">
+  
+            <input class="form-control"
+  
+                   id="Password"
+  
+                   type="password"
+  
+                   placeholder="enter your password(required)"
+  
+                   required
+  
+                   Password
+  
+                   [(ngModel)]="customer.password"
+  
+                   name="Password"
+  
+                   #passwordVar="ngModel"
+  
+                   [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }" />
+  
+            <span class="invalid-feedback">
+  
+              <span *ngIf="passwordVar.errors?.required">
+  
+                Please enter your password.
+  
+              </span>
+  
+              <span *ngIf="passwordVar.errors?.Password">
+  
+                Please enter a valid password.
+  
+              </span>
+  
+            </span>
+  
+          </div>
+  
+        </div>
+  
+  
+        
+  
+  
+        <div class="form-group row mb-2">
+  
+          <div class="offset-md-2 col-md-4">
+  
+            <button class="btn btn-primary mr-3"
+  
+                    type="submit"
+  
+                    style="width:80px"
+  
+                    [title]="signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+  
+                    [disabled]="!signupForm.valid" (click)="changeValidation()" routerLink="/customerView/cartView">
+  
+              Login
+  
+            </button>
+  <button (click)="onConsole()">console details</button>
+          </div>
+  
+        </div>
+  
+      </form>
+  
+    </div>
+  
+  </div>
+  
+ <!--  <br>Dirty: {{ signupForm.dirty }} -->
+  
+  <br>Touched: {{ signupForm.touched }}
+  
+  <br>Valid: {{ signupForm.valid }}
+  
+  <!-- <br>Value: {{ signupForm.value | json }} -->

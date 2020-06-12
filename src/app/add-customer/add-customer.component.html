@@ -1,0 +1,23 @@
+<form>
+  <div class="form-group">
+    <label for="id">Customer Id</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.id" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id">
+  </div>
+        <div class="form-group">
+          <label for="name">Customer Name</label>
+          <input type="text" class="form-control" [(ngModel)]="customer.name" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="key">Designer</label>
+          <input type="text" class="form-control" [(ngModel)]="customer.key" id="key" name="key" placeholder="enter destination">
+        </div>
+        <div class="form-group">
+          <label for="l1">Location point 1</label>
+          <input type="text" class="form-control" [(ngModel)]="customer.l1" id="l1" name="l1" placeholder="enter location point1">
+        </div>
+        <div class="form-group">
+          <label for="l2">Location point 2</label>
+          <input type="text" class="form-control" [(ngModel)]="customer.l2" id="l2" name="l2" placeholder="enter location point2">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="addCustomer()" routerLink="/customerView/cartView">Submit</button>
+      </form>

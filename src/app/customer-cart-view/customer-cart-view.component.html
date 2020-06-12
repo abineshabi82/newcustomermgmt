@@ -1,0 +1,19 @@
+<div class="row " >
+    <div class="col-sm-2 card" style="margin-top:20px;margin-left: 75px;" *ngFor="let customer of customers|paginate:{itemsPerPage:8,currentPage:p}">
+        <div class="card-header-fliud bg-dark-fliud text-white-fliud ">
+        <h4>
+            <a class="fa fa-edit fa-1x" (click)="newMapData(customer)" routerLink="/customerInfo"></a>
+            <span>{{customer.name|titlecase}}</span>
+
+        </h4>
+        
+        </div>
+        <div class="card-body">
+        <img src="https://www.hit4hit.org/img/login/user-icon-6.png" class="card-img-top" alt="image">
+        <h6>{{customer.key|uppercase}}</h6>
+        <button (click)="newMapData(customer)" style="margin-bottom:10px;width: 100%;" routerLink="/customerView/mapView" class="btn btn-primary btn-sm">View Map</button>
+       <button (click)="newMapData(customer)" style="margin-bottom:10px;width: 100%;" routerLink="/customerInfo/customerOrderView" class="btn btn-primary btn-sm">View Order</button>
+    </div>
+    </div>
+</div><br/>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>

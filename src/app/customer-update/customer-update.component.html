@@ -1,0 +1,22 @@
+<form>
+  <div class="form-group">
+    <input type="hidden" class="form-control" [(ngModel)]="mapData.id" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter name">
+  </div>
+    <div class="form-group">
+      <label for="Input1">Customer Name</label>
+      <input type="text" [(ngModel)]="mapData.name" class="form-control" id="Input1" name="Input1" aria-describedby="emailHelp" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="Input2">Designer</label>
+      <input type="text" [(ngModel)]="mapData.key" class="form-control" id="Input2" name="Input2" placeholder="enter destination">
+    </div>
+    <div class="form-group">
+      <label for="l1">Location point 1</label>
+      <input type="text" class="form-control" [(ngModel)]="mapData.l1" id="l1" name="l1" placeholder="enter destination">
+    </div>
+    <div class="form-group">
+      <label for="l2">Location point 2</label>
+      <input type="text" class="form-control" [(ngModel)]="mapData.l2" id="l2" name="l2" placeholder="enter destination">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="updateCustomer()" routerLink="/customerInfo/customerInfoDetails">Update</button>
+  </form>
